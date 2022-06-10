@@ -2,5 +2,7 @@
     composes: box_shadow from global;
     composes: row_center from global;
     height: var(--height-navbar);
-    background-color: var(--primary-color);    
+    background-color: var(--primary-color);  
+    display: grid;
+    grid-template-columns: repeat(2,1fr);  
 }
