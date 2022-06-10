@@ -1,0 +1,6 @@
+.container {
+    composes: box_shadow from global;
+    composes: row_center from global;
+    height: var(--height-navbar);
+    background-color: var(--primary-color);    
+}

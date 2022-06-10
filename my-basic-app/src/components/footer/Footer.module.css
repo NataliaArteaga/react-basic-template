@@ -1,0 +1,6 @@
+.container {
+    composes: row_center from global;
+    background-color: var(--secondary-color);
+    height: var(--height-footer);
+    color: white;
+}
