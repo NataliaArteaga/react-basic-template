@@ -1,0 +1,25 @@
+.content_data {
+    height: calc(100vh - var(--height-navbar) - var(--height-footer));
+    overflow: auto;
+}
+
+
+.content_data::-webkit-scrollbar {
+    width: 5px;    
+}
+
+/* Track */
+.content_data::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.content_data::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius:5px;
+}
+
+/* Handle on hover */
+.content_data::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
