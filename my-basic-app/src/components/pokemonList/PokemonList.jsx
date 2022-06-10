@@ -5,6 +5,8 @@ import styles from "./PokemonList.module.css";
 const PokemonList = ({
   pokemonList,
   onClick = () => {},
+  favoritePokemons,
+  handleFavorite = () => {},
 }) => {
   return (
     <div className={styles.container}>
@@ -17,6 +19,8 @@ const PokemonList = ({
             title={pokemon.name}
             img={process.env.REACT_APP_API_URL_IMG + idPokemon + ".png"}
             onClick={() => onClick(idPokemon)}
+            handleFavorite={() => handleFavorite(pokemon, idPokemon)}
+            isFavorite={favoritePokemons[idPokemon]}
           />
         );
       })}

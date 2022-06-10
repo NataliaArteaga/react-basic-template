@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Pokemon.module.css";
 
-const Pokemon = ({ pokemon }) => {
+const Pokemon = ({ pokemon, isFavorite, handleFavorite = () => {} }) => {
   return (
     <div className={styles.container}>
       <div>NOMBRE: {pokemon.name}</div>
@@ -13,8 +13,12 @@ const Pokemon = ({ pokemon }) => {
         src={process.env.REACT_APP_API_URL_IMG + pokemon.id + ".png"}
         alt="img"
       />
-
-     
+      <button
+        className={styles.button}
+        onClick={() => handleFavorite(pokemon.id)}
+      >
+        {isFavorite ? "FAVORITO" : "NO FAVORITO"}
+      </button>
     </div>
   );
 };
