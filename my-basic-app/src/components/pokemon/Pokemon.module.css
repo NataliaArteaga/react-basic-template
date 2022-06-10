@@ -1,0 +1,9 @@
+.container{
+    composes:column_center from global;
+    height: 100%;
+}
+
+.img{
+    height: 10vw;
+    width: 10vw;
+}
