@@ -6,3 +6,8 @@
     padding: 1vw 0vw;
     box-sizing: border-box;
 }
+
+.name{
+    font-weight: bold;
+    text-transform: uppercase;
+}

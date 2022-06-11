@@ -1,0 +1,11 @@
+.chart {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .title{
+    composes: text from global;
+    color:#463fc2
+  }

@@ -1,14 +1,16 @@
-import React from "react";
+import React, { memo }from "react";
+import Button from "../button/Button";
 import styles from "./Card.module.css";
 
 const Card = ({ title, img, onClick = () => {}, isFavorite, handleFavorite = () => {} }) => {
   return (
     <div className={styles.container}>
-      <div onClick={onClick}>{title}</div>
+      <div className={styles.name} onClick={onClick}>{title}</div>
       <img src={img} alt="pokemon img" onClick={onClick}></img>
-      <button onClick={() => handleFavorite()}>{isFavorite ? "FAVORITO" : "NO FAVORITO"}</button>
+      <Button onClick={() => handleFavorite()} isFavorite={isFavorite}>&hearts; beats</Button>
+      
     </div>
   );
 };
 
-export default Card;
+export default  memo(Card);

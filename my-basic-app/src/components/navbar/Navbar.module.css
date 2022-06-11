@@ -5,4 +5,11 @@
     background-color: var(--primary-color);  
     display: grid;
     grid-template-columns: repeat(2,1fr);  
+    justify-items: center;
+}
+
+.title{
+    composes: text from global;
+    color: var(--secondary-color);
+                                                
 }

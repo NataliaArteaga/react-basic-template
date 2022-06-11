@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PokemonList from "../../components/pokemonList/PokemonList";
@@ -13,6 +13,7 @@ const PokemonListFeature = () => {
   const navigate = useNavigate();
   const { pokemonList } = useSelector((state) => state.pokemonList);
   const { favoritePokemons } = useSelector((state) => state.favoritePokemon);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     dispatch(getPokemons());
@@ -28,12 +29,21 @@ const PokemonListFeature = () => {
     else dispatch(addFavorite(newPokemon));
   };
 
+  const newList = useMemo(() => {
+    if (!searchText) return pokemonList;
+    return pokemonList.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }, [searchText, pokemonList]);
+
   return (
     <PokemonList
-      pokemonList={pokemonList}
+      pokemonList={newList}
       onClick={handlePokemonDetail}
       handleFavorite={handleFavorite}
       favoritePokemons={favoritePokemons}
+      setSearchText = {setSearchText}
+      searchText = {searchText}
     />
   );
 };

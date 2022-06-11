@@ -1,13 +1,17 @@
-import React from 'react'
-import styles from "./Navbar.module.css"
+import React from "react";
+import styles from "./Navbar.module.css";
 
-const Navbar = ({handleGo = () => {}} ) => {
+const Navbar = ({ handleGo = () => {} }) => {
   return (
     <div className={styles.container}>
-         <div onClick={() => handleGo("")}>Go Catch ´Em All</div>
-      <div onClick={() => handleGo("favorites")}>FAVORITOS</div>
+      <div className={styles.title} onClick={() => handleGo("")}>
+        GO CATCH ´EM ALL
+      </div>
+      <div className={styles.title} onClick={() => handleGo("favorites")}>
+        FAVORITOS
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

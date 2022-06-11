@@ -1,0 +1,12 @@
+.searchbar{
+    display: block;
+    margin: 30px auto 20px auto;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    width: 30%;
+    min-width:200px
+    
+}
+

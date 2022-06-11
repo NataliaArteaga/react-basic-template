@@ -1,0 +1,27 @@
+.heart {
+  position: relative;
+  border-radius: 5px;
+  border: none;
+  width:30px;
+  height:30px;
+  min-width: 20px;
+  min-height: 20px;
+  content: '&#9829;';
+	color: red;
+	font-size: 1.3rem;
+  text-align: center;
+}
+
+
+.btn_fav {
+  composes: heart;
+  background-color: var(--primary-color);
+
+}
+
+.btn_nofav {
+  composes: heart;
+  background-color: var(--secondary-color);
+  color: var(--secondary-color);
+
+}
