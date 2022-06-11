@@ -1,10 +1,26 @@
-# Getting Started with Create React App and Redux
+# Project created with Create React App and Redux of POKEMON API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+## Folders order
+
+Features folder contain the logic of each feature (slicer as reducer, api as async actions, and logic inherent to the feature), separated from the view (components) to keep a clean, tidy and easily accessible code. The store is on the app folder as the template generated.
+
+Basics contain shared view components as cards, buttons, etc.
+
+Config contain the router and the logic using lazy loading and suspense to improve the performance of the app as single page
+
+
+## Used elements
+
+ 1.Prettier, eslint and husky to establish a clean code.
+ 2.Redux toolkit, with slices.
+ 3.Modular CSS usage
+ 4.MEMO and useMemo for card rendering performance
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, to see the app running, you can run:
 
 ### `npm start`
 
@@ -27,7 +43,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
@@ -39,8 +54,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
