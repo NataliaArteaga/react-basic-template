@@ -6,7 +6,6 @@ export const getPokemons = createAsyncThunk(
    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results);
         return data.results;
       });
       return response

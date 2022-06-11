@@ -12,17 +12,14 @@ export const favoritePokemon = createSlice({
   reducers: {
     addFavorite: (state, action) => {
       const { id } = action.payload;
-      console.log("add", id);
       state.favoritePokemons = {
         ...state.favoritePokemons,
         [id]: action.payload,
       };
-      console.log(state.favoritePokemons);
     },
 
     removeFavorite: (state, action) => {
       const { id } = action.payload;
-      console.log("remove", id);
       state.favoritePokemons = { ...state.favoritePokemons };
       delete state.favoritePokemons[id];
     },

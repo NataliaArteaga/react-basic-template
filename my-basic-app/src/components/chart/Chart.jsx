@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 const Chart = ({dataPokemon}) => {
-console.log(dataPokemon)
+
 
   return (
     <div style={{ textAlign: "center" }}>

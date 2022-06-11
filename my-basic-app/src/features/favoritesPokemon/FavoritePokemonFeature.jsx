@@ -1,4 +1,4 @@
-import React , { useState, useMemo} from "react";
+import React, { useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PokemonList from "../../components/pokemonList/PokemonList";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const FavoritePokemonFeature = () => {
   const navigate = useNavigate();
 
   const handleFavorite = (pokemon, id) => {
-    const newPokemon = {...pokemon, id:id}
+    const newPokemon = { ...pokemon, id: id };
     if (favoritePokemons[id]) dispatch(removeFavorite(newPokemon));
     else dispatch(addFavorite(newPokemon));
   };
@@ -23,8 +23,9 @@ const FavoritePokemonFeature = () => {
     navigate("/" + id);
   };
 
-  const { favoritePokemons, status } = useSelector((state) => state.favoritePokemon);
-  console.log(favoritePokemons)
+  const { favoritePokemons, status } = useSelector(
+    (state) => state.favoritePokemon
+  );
 
   const newList = useMemo(() => {
     if (!searchText) return Object.values(favoritePokemons);
@@ -32,12 +33,18 @@ const FavoritePokemonFeature = () => {
       pokemon.name.toLowerCase().includes(searchText.toLowerCase())
     );
   }, [searchText, favoritePokemons]);
- 
+
   if (status === "loading") return <Spinner />;
 
   return (
-    <PokemonList pokemonList={newList} onClick={handlePokemonDetail} handleFavorite={handleFavorite}  favoritePokemons={favoritePokemons}  setSearchText={setSearchText}
-    searchText={searchText}/>
+    <PokemonList
+      pokemonList={newList}
+      onClick={handlePokemonDetail}
+      handleFavorite={handleFavorite}
+      favoritePokemons={favoritePokemons}
+      setSearchText={setSearchText}
+      searchText={searchText}
+    />
   );
 };
 
