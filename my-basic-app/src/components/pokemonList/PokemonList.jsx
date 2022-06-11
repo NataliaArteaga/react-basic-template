@@ -11,13 +11,15 @@ const PokemonList = ({
   setSearchText,
   searchText,
 }) => {
+  console.log(pokemonList)
   return (
     <div>
       <SearchBar setSearchText={setSearchText} searchText={searchText} />
       <div className={styles.container}>
         {pokemonList.map((pokemon) => {
-          const idPokemon =
-            pokemon.url.split("/")[pokemon.url.split("/").length - 2];
+          let idPokemon = null;
+          pokemon.url ? idPokemon = pokemon.url.split("/")[pokemon.url.split("/").length - 2] : idPokemon = pokemon.id
+
           return (
             <Card
               key={idPokemon}
